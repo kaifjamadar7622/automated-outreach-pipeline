@@ -3,3 +3,7 @@ venv/
 __pycache__/
 *.pyc
 output/
+
+# Secrets
+.env
+prospeo_key.txt
