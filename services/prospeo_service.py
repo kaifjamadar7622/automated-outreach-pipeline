@@ -1,11 +1,10 @@
-import os
 import requests
-from dotenv import load_dotenv
 from services.export_service import export_contacts
+from services.config import get_env_var
 
-load_dotenv()
 
-API_KEY = os.getenv("PROSPEO_API_KEY")
+# Load API key via centralized config loader (raises if missing)
+API_KEY = get_env_var("PROSPEO_API_KEY")
 
 
 class ProspeoService:

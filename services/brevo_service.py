@@ -1,14 +1,12 @@
-import os
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
+from services.config import get_env_var
 
 
 class BrevoService:
 
     def __init__(self):
-        self.api_key = os.getenv("BREVO_API_KEY")
+        # load API key via centralized config loader
+        self.api_key = get_env_var("BREVO_API_KEY")
 
     def send_email(
         self,
